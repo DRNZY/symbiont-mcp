@@ -13,7 +13,7 @@ High-performance AST-aware code navigation, refactoring engine, and declarative 
 ## Installation
 
 ```bash
-git clone https://github.com/darnell/symbiont-mcp.git # or your target repo
+git clone https://github.com/DRNZY/symbiont-mcp.git
 cd symbiont-mcp
 npm install
 npm run build
