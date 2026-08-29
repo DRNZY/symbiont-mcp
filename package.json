@@ -1,0 +1,44 @@
+{
+  "name": "symbiont-mcp",
+  "version": "1.0.0",
+  "description": "High-performance AST-aware code navigation, refactoring, and architectural rule checking MCP server",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "symbiont-mcp": "./dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "mcp",
+    "ast",
+    "refactoring",
+    "typescript",
+    "code-navigation",
+    "architecture-rules",
+    "linter"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0",
+    "diff": "^7.0.0",
+    "micromatch": "^4.0.8",
+    "ts-morph": "^25.0.1",
+    "yaml": "^2.7.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/diff": "^7.0.0",
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
+  }
+}

@@ -1,0 +1,12 @@
+rules:
+  - id: no-engine-in-utils
+    from: "src/utils/**"
+    disallow_imports: ["src/engine/**", "ts-morph"]
+    message: "Utility modules must remain pure and free from AST engine dependencies."
+    severity: error
+
+  - id: no-circular-dependencies
+    files: "src/**"
+    disallow_circular_dependencies: true
+    message: "Zero circular dependencies allowed across the symbiont-mcp codebase."
+    severity: error

@@ -1,0 +1,17 @@
+rules:
+  - id: no-db-in-ui
+    from: "src/components/**"
+    disallow_imports: ["src/server/db/**", "drizzle-orm", "@prisma/client"]
+    message: "UI components must not import directly from the database layer."
+    severity: error
+
+  - id: enforce-zod-actions
+    files: "src/actions/**"
+    require_named_export_type: "z.infer<*>"
+    message: "Server actions must return a z.infer typed result."
+    severity: warning
+
+  - id: disallow-cycles
+    files: "src/cycle/**"
+    disallow_circular_dependencies: true
+    message: "Circular dependencies are forbidden in the cycle domain."
