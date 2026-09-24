@@ -1,14 +1,14 @@
 # symbiont-mcp
 
-High-performance AST-aware code navigation, refactoring engine, and declarative architectural rule checker for the Model Context Protocol (MCP).
+AST-aware code navigation, refactoring engine, and architectural rule checker for the Model Context Protocol (MCP).
 
 ## Features
 
-- **AST File Outlines (`get_file_outline`)**: Inspects functions, classes, methods, interfaces, types, enums, and variables with line ranges and type signatures without reading full file contents into context.
-- **Deterministic Symbol Tracing (`find_all_usages`)**: Resolves definitions, call sites, imports, and type references across the codebase using TypeScript compiler bindings.
-- **AST Renaming (`rename_symbol`)**: Safely renames symbols across all referencing files and generates unified diff patches with dry-run support.
-- **Architecture Invariant Checking (`check_architecture_rules`)**: Validates import boundaries and return-type contracts against `.symbiontrc.yaml`.
-- **Dependency Graph & Cycle Detection (`get_dependency_graph`)**: Maps module import relationships and detects circular dependency chains.
+- AST file outlines (`get_file_outline`): inspect functions, classes, methods, interfaces, types, and variables with line ranges and type signatures.
+- Symbol tracing (`find_all_usages`): resolve definitions, call sites, imports, and type references across codebases using TypeScript compiler bindings.
+- AST renaming (`rename_symbol`): rename symbols across referencing files with unified diff generation and dry-run support.
+- Architectural invariant checking (`check_architecture_rules`): validate import boundaries and return-type contracts against `.symbiontrc.yaml`.
+- Dependency graph generation (`get_dependency_graph`): map module import trees and detect circular dependency cycles.
 
 ## Installation
 
@@ -19,9 +19,9 @@ npm install
 npm run build
 ```
 
-## MCP Configuration
+## MCP configuration
 
-Add to your MCP configuration (`mcp_config.json` or client settings):
+Add to your MCP configuration file (`mcp_config.json` or client settings):
 
 ```json
 {
@@ -34,7 +34,7 @@ Add to your MCP configuration (`mcp_config.json` or client settings):
 }
 ```
 
-## Tools Reference
+## Tools reference
 
 - `get_file_outline`: `filePath: string`, `workspaceRoot?: string`
 - `find_all_usages`: `symbolName: string`, `entryFile?: string`, `workspaceRoot?: string`
@@ -43,7 +43,7 @@ Add to your MCP configuration (`mcp_config.json` or client settings):
 - `get_dependency_graph`: `workspaceRoot?: string`
 - `set_workspace_root`: `workspaceRoot: string`
 
-## Configuration (`.symbiontrc.yaml`)
+## Configuration (.symbiontrc.yaml)
 
 ```yaml
 rules:
@@ -69,7 +69,7 @@ rules:
     severity: error
 ```
 
-## CLI Usage
+## CLI usage
 
 ```bash
 # Check architecture rules
